@@ -1,4 +1,4 @@
-// tarraq - the reflective machine of Optic.
+// quine - the reflective machine of Palimpsest.
 //
 // One medium: S-expressions. Code and data are the same text.
 // This host evaluator is the bootstrap: a small Lisp with a
@@ -1371,17 +1371,17 @@ fn cmd_seed_eval(seed_path: &str, expr: &str, times: usize, fuel: u64) -> Result
 }
 
 fn usage() -> ! {
-    eprintln!("tarraq - the reflective machine");
+    eprintln!("quine - the reflective machine");
     eprintln!("usage:");
-    eprintln!("  tarraq eval [--fuel N] <expr>");
-    eprintln!("  tarraq run [--fuel N] <file> [expr]");
-    eprintln!("  tarraq repl [--fuel N]");
-    eprintln!("  tarraq board view <dir> [--fuel N]");
-    eprintln!("  tarraq board eval <dir> <expr> [--fuel N]");
-    eprintln!("  tarraq board set <dir> <name>     (definition on stdin)");
-    eprintln!("  tarraq board repl <dir> [--fuel N]");
-    eprintln!("  tarraq seed-eval [--fuel N] <seed-file> <expr>");
-    eprintln!("  tarraq close-eval [--fuel N] [--times K] <seed-file> <expr>");
+    eprintln!("  quine eval [--fuel N] <expr>");
+    eprintln!("  quine run [--fuel N] <file> [expr]");
+    eprintln!("  quine repl [--fuel N]");
+    eprintln!("  quine board view <dir> [--fuel N]");
+    eprintln!("  quine board eval <dir> <expr> [--fuel N]");
+    eprintln!("  quine board set <dir> <name>     (definition on stdin)");
+    eprintln!("  quine board repl <dir> [--fuel N]");
+    eprintln!("  quine seed-eval [--fuel N] <seed-file> <expr>");
+    eprintln!("  quine close-eval [--fuel N] [--times K] <seed-file> <expr>");
     std::process::exit(2);
 }
 
@@ -1641,7 +1641,7 @@ mod tests {
     }
 
     fn write_board(cells: &[(&str, &str)], fuel: u64) -> (String, Rc<RefCell<Board>>, Env) {
-        let dir = std::env::temp_dir().join(format!("tarraq-board-test-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("quine-board-test-{}", std::process::id()));
         let cells_dir = dir.join("cells");
         std::fs::create_dir_all(&cells_dir).unwrap();
         for (name, text) in cells {

@@ -1,10 +1,10 @@
 [package]
-name = "tarraq"
+name = "quine"
 version = "0.1.0"
 edition = "2021"
 
 [[bin]]
-name = "tarraq"
+name = "quine"
 path = "src/main.rs"
 
 [profile.release]

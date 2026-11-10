@@ -1,9 +1,9 @@
-; seed.tq - the evaluator, written in tarraq itself.
+; seed.tq - the evaluator, written in quine itself.
 ;
 ; This document is the machine. Loaded by the host evaluator,
 ; it defines ev: a metacircular evaluator for the core forms -
 ; quote, if, lambda, define, set!, begin, let - over the host's
-; primitives. The closing (tarraq close-eval) evaluates this
+; primitives. The closing (quine close-eval) evaluates this
 ; very text through ev, so the interpreted copy replaces the
 ; host-loaded one, layer by layer, and the system runs its own
 ; text.

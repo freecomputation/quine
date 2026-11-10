@@ -1,5 +1,5 @@
 ; classics.tq - the fixed-point classics, runnable with
-;   tarraq run examples/classics.tq
+;   quine run examples/classics.tq
 ; (the last form in the file is its value)
 
 (define (fact n)
