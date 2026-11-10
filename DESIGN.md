@@ -1,34 +1,30 @@
-# Tarraq - reflect-code - design
+# Quine - design
 
-In the system prose of Optic, Tarraq is reflect-code: it reflects
-on code, evaluating its own text. Tarraq is the codename and the
-repo handle.
-
-Tarraq is the living layer of Optic: a mutually recursive
+Quine is the living layer of Palimpsest: a mutually recursive
 machine, a true Lisp machine in the old sense, rebuilt under
-this house's laws. Its name is Inuktitut - tarraq, glossed in
+this house's laws. Its name is Inuktitut - quine, glossed in
 the old dictionaries as shade and as reflection. In the oldest
-accounts a person's tarraq is their shadow-double, the same
+accounts a person's quine is their shadow-double, the same
 shape as the body and inseparable from it. The name is also the
 technical word for what the machine does. In computing,
 reflection is a program inspecting and modifying itself.
-Tarraq's defining act is reflection, and the name was already
+Quine's defining act is reflection, and the name was already
 the definition. It stands in the family with its siblings:
-Siuti hears, Umiak carries, Pisuk walks. Tarraq reflects.
+Passband hears, Coffer carries, Propagule walks. Quine reflects.
 
 ## The idea
 
-Optic's worlds are text: readable, checkable, diffable,
+Palimpsest's worlds are text: readable, checkable, diffable,
 signable, copyable. But a document today only sits there.
-Tarraq makes the text live. One medium - S-expressions - in
+Quine makes the text live. One medium - S-expressions - in
 which code and data are the same text, so a document can be a
 program with no second format, and every program inherits the
 world's governance for free: the chain ledgers it, the gate
 proposes it, the witness can sign it.
 
 At the center sits a seed evaluator: small enough to read in
-one sitting, written in Tarraq's own language, grown as a
-derivation under idem's rules and run inside the runner's
+one sitting, written in Quine's own language, grown as a
+derivation under fixity's rules and run inside the runner's
 meter. The mutual recursion is literal. The evaluator's own
 source is a document in the world it evaluates. Mold that
 document through the window and the machine that evaluates the
@@ -37,7 +33,7 @@ chain witnessing the system change itself, edit by edit.
 
 ## The board
 
-Tarraq is not run-once machinery. It is a board: a persistent
+Quine is not run-once machinery. It is a board: a persistent
 operating surface of named cells, each cell a definition or a
 value, held as documents in a world. Values are computed by
 the evaluator and shown through the window, live. Sessions
@@ -45,11 +41,11 @@ begin and end; the board does not. The store is its memory,
 compost is its forgetting, and nothing about its state lives
 outside the text. Killing every session loses nothing: the
 board is exactly what the world says it is, verified before it
-is shown, like everything else in Optic.
+is shown, like everything else in Palimpsest.
 
 ## The laws it runs under
 
-Tarraq introduces no new law. It inherits the house's, applied
+Quine introduces no new law. It inherits the house's, applied
 to living code:
 
 - Turing complete, never unaccountable. The calculus has no
@@ -58,7 +54,7 @@ a grant, through the runner's meter. A computation that would
 run forever does not hang the board - it starves, and the
 board shows the corpse, in the chain.
 - Reflection through the gate. The evaluator, and any cell on
-the board, changes the way everything in Optic changes: by the
+the board, changes the way everything in Palimpsest changes: by the
 owner's direct hand, or as a proposal - from the model, from
 another world, from the board itself - kept or discarded in
 the open, the discard kept as a fossil.
@@ -86,7 +82,7 @@ layer one's fuel to the unit. The system's double does the
 system's work, and the fixed point is the proof it is the
 same double.
 - The board persists: a board built up over many sessions,
-carried to a second host the way Pisuk carries a store,
+carried to a second host the way Propagule carries a store,
 resumes with every cell's value intact and every pending
 computation accounted.
 - Starvation, shown: a non-terminating cell exhausts its grant
@@ -101,7 +97,7 @@ completeness tests against a bootstrap host evaluator - a
 Rust evaluator grown like the other tools, per the ruling
 below. (As built first: the host and the seed in one crate,
 the seed grown by recipe like the rest of the house.)
-- L1, the board: persistent cells in an Optic world, live
+- L1, the board: persistent cells in an Palimpsest world, live
 values through the window, proposals for definitions, compost
 for dead cells.
 - L2, the closing: the bootstrap hands over. The evaluator

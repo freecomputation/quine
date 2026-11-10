@@ -1,25 +1,21 @@
-# Tarraq
+# Quine
 
-Tarraq is the living layer of Optic: a mutually recursive
+Quine is the living layer of Palimpsest: a mutually recursive
 machine, a true Lisp machine in the old sense. One medium -
 S-expressions - in which code and data are the same text. At
-its center sits a seed evaluator written in Tarraq's own
+its center sits a seed evaluator written in Quine's own
 language, and the system closes over it: the evaluator
 evaluates its own source, the copy it produces takes the
 original's seat, and the system runs its own text. The design
 lives in DESIGN.md. This file is about the machine as built.
 
-The name is Inuktitut - tarraq, shade and reflection, the
-shadow-double of a person. In computing, reflection is a
-program inspecting and modifying itself. The name was already
-the definition. In the family: Siuti hears, Umiak carries,
-Pisuk walks. Tarraq reflects.
-
-In the system prose of Optic, Tarraq is reflect-code. The
-explicit name says what it does: it reflects on code, evaluating
-its own text and modifying itself in the open. The codename
-Tarraq remains the repo handle, at freecomputation/tarraq,
-because a repo slug is an address.
+The name is the computing word for exactly that closing: a
+quine is a program that produces its own source as its output,
+and this machine's evaluator, run on its own text, hands back
+an evaluator that behaves identically - measured, the closing
+is a fixed point, the same fuel at every layer. In the family:
+Passband hears, Coffer carries, Propagule walks. Quine closes
+over itself.
 
 ## The pieces
 
@@ -27,12 +23,12 @@ because a repo slug is an address.
 core language, the fuel meter, the board, and the drivers.
 It has no dependencies beyond the Rust standard library.
 - seed.tq - the seed: a metacircular evaluator written in
-Tarraq itself. Loaded by the host, it defines ev, the
+Quine itself. Loaded by the host, it defines ev, the
 evaluator a guest program runs under.
 - examples/ - the classics as a runnable file, and a demo
 board of three cells.
-- recipes/tarraq.json - the growth recipe: the crate as an
-idem derivation, grown by the grower like everything else in
+- recipes/quine.json - the growth recipe: the crate as an
+fixity derivation, grown by the grower like everything else in
 the house.
 
 ## The language
@@ -63,26 +59,26 @@ keeps the rest of its state.
 
 ## Commands
 
-- tarraq eval [--fuel N] <expr> - evaluate one expression
+- quine eval [--fuel N] <expr> - evaluate one expression
 under the host
-- tarraq run [--fuel N] <file> [expr] - load a file of forms
+- quine run [--fuel N] <file> [expr] - load a file of forms
 into a fresh environment, then evaluate the expression, or
 the file's last value
-- tarraq repl - the host, interactively
-- tarraq seed-eval [--fuel N] <seed-file> <expr> - evaluate
+- quine repl - the host, interactively
+- quine seed-eval [--fuel N] <seed-file> <expr> - evaluate
 the expression under the seed evaluator
-- tarraq close-eval [--times K] [--fuel N] <seed-file> <expr>
+- quine close-eval [--times K] [--fuel N] <seed-file> <expr>
 - the closing: load the seed, then let the evaluator produce
 its own replacement K times, then run the expression under
 the evaluator of record
-- tarraq board view <dir> - show every cell of a board and
+- quine board view <dir> - show every cell of a board and
 its value
-- tarraq board eval [--fuel N] <dir> <cell> - evaluate a cell
+- quine board eval [--fuel N] <dir> <cell> - evaluate a cell
 by name; an expression in place of a name is evaluated
 against the board
-- tarraq board set <dir> <name> - write a cell, its form read
+- quine board set <dir> <name> - write a cell, its form read
 from standard input
-- tarraq board repl <dir> - a session against a board; the
+- quine board repl <dir> - a session against a board; the
 session ends, the board does not
 
 ## The board
@@ -103,7 +99,7 @@ computes. Cross-references use cell names, so a cell's file
 name is the name its neighbours call it by.
 
 The board as shipped is a directory of cell files. The
-design's fuller form - cells as documents in an Optic world,
+design's fuller form - cells as documents in an Palimpsest world,
 changed through the proposal gate and witnessed in the chain
 - is the road from here, not a thing this build claims.
 
@@ -157,13 +153,13 @@ comment saying so, where the next reader will meet it.
 
 ## Growth
 
-recipes/tarraq.json grows the crate with idem's grower: the
+recipes/quine.json grows the crate with fixity's grower: the
 four source files pinned by hash, staged, built, and the
 binary and the seed sealed into the store with a receipt.
 The grown binary is bit-identical to a direct build when
-both are built with the build directory remapped to /tarraq
-- RUSTFLAGS set to --remap-path-prefix <build-dir>=/tarraq,
-the same condition the idem runner carries. Grown on this
+both are built with the build directory remapped to /quine
+- RUSTFLAGS set to --remap-path-prefix <build-dir>=/quine,
+the same condition the fixity runner carries. Grown on this
 host under that condition, the binary hashes to d3d91fc2 and
 runs the closing to the same 120 at the same fuel as the
 direct build.
@@ -173,7 +169,7 @@ direct build.
 L0, L1 and L2 as the design orders them are built and
 tested here in their first form: the seed as a document, the
 board as a directory of cells, the closing at two layers.
-What is not built: the board as an Optic world with
+What is not built: the board as an Palimpsest world with
 proposals and witnesses, cells that ask the broker for
 capabilities, and the seed grown as a Wasm component in the
 runner. Those are named in the design as the road, and this
